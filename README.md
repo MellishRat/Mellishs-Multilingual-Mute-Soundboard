@@ -119,10 +119,10 @@ The OSC target and cooldown are edited in the main soundboard app.
 The included boards are:
 
 ```txt
-host.json
-board_2.json
-board_3.json
-board_4.json
+everyday_conversation.json
+general_social.json
+vrchat_technical.json
+flirty_social.json
 board_5.json
 ```
 
@@ -194,11 +194,11 @@ Expected output:
 ```txt
 dist/Mellishs_Multilingual_Mute_Soundboard.exe
 dist/Phrase_Board_JSON_Editor.exe
-dist/host.json
-dist/board_2.json
-dist/board_3.json
-dist/board_4.json
-dist/board_5.json
+everyday_conversation.json
+general_social.json
+vrchat_technical.json
+flirty_social.json
+board_5.json
 dist/board_settings.json
 ```
 
