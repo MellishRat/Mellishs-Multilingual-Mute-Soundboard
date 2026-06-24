@@ -1,10 +1,30 @@
 import json
 import socket
+import threading
+import html
+import sys
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 
-APP_DIR = Path(__file__).resolve().parent
+def get_app_dir():
+    """
+    Return the real folder the app is running from.
+
+    Source mode:
+        folder containing this .py file
+
+    PyInstaller EXE mode:
+        folder containing the .exe file
+
+    This keeps board_settings.json and the board JSON files local to the
+    folder you put the EXE in, instead of reading from PyInstaller's temp folder.
+    """
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+APP_DIR = get_app_dir()
 SETTINGS_PATH = APP_DIR / "board_settings.json"
 
 DEFAULT_CONFIG = {
@@ -15,6 +35,7 @@ DEFAULT_CONFIG = {
     "columns": 8,
     "window_width": 1280,
     "window_height": 820,
+    "web_port": 8787,
     "phrases": []
 }
 
@@ -83,9 +104,16 @@ def normalise_config(config):
 def config_path_from_tab(tab):
     raw = tab.get("file", "host.json")
     p = Path(raw)
-    if not p.is_absolute():
-        p = APP_DIR / p
-    return p
+
+    if p.is_absolute():
+        if p.exists():
+            return p
+        fallback = APP_DIR / p.name
+        if fallback.exists():
+            return fallback
+        return fallback
+
+    return APP_DIR / p
 
 class PhraseBoardApp:
     def __init__(self, root):
@@ -103,6 +131,9 @@ class PhraseBoardApp:
         self.buttons = []
         self.dark_mode = bool(self.settings.get("dark_mode", self.config.get("dark_mode", True)))
         self.columns = int(self.config.get("columns", 8))
+        self.web_port = int(self.config.get("web_port", 8787))
+        self.remote_running = False
+        self.remote_thread = None
 
         self.set_theme_values()
         self.build_ui()
@@ -171,6 +202,226 @@ class PhraseBoardApp:
         packet = build_chatbox_packet(text, send_immediately)
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.sendto(packet, (self.osc_ip, self.osc_port))
+
+    def get_local_ip(self):
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+                sock.connect(("8.8.8.8", 80))
+                return sock.getsockname()[0]
+        except Exception:
+            try:
+                return socket.gethostbyname(socket.gethostname())
+            except Exception:
+                return "127.0.0.1"
+
+    def get_remote_url(self):
+        ip = self.local_ip_var.get().strip() if hasattr(self, "local_ip_var") else self.get_local_ip()
+        try:
+            port = int(self.web_port_var.get())
+        except Exception:
+            port = self.web_port
+        return f"http://{ip}:{port}/"
+
+    def refresh_remote_labels(self):
+        if hasattr(self, "local_ip_var"):
+            self.local_ip_var.set(self.get_local_ip())
+        if hasattr(self, "remote_url_var"):
+            self.remote_url_var.set(self.get_remote_url())
+
+    def copy_remote_url(self):
+        self.refresh_remote_labels()
+        self.root.clipboard_clear()
+        self.root.clipboard_append(self.remote_url_var.get())
+        self.status_var.set("Remote URL copied.")
+
+    def show_qr_window(self):
+        self.refresh_remote_labels()
+        url = self.remote_url_var.get()
+        try:
+            import qrcode
+            from PIL import ImageTk
+        except Exception:
+            messagebox.showerror(
+                "QR support missing",
+                "QR code support needs these Python packages:\n\npip install qrcode pillow"
+            )
+            return
+
+        qr = qrcode.QRCode(border=2, box_size=10)
+        qr.add_data(url)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white").convert("RGB")
+        photo = ImageTk.PhotoImage(img)
+
+        win = tk.Toplevel(self.root)
+        win.title("Phone Remote QR Code")
+        win.configure(bg=self.bg)
+        win.resizable(False, False)
+
+        title = tk.Label(win, text="Scan for Phone Remote", font=("Segoe UI", 14, "bold"), bg=self.bg, fg=self.fg)
+        title.pack(padx=16, pady=(14, 6))
+
+        qr_label = tk.Label(win, image=photo, bg="white")
+        qr_label.image = photo
+        qr_label.pack(padx=16, pady=8)
+
+        url_label = tk.Label(win, text=url, bg=self.bg, fg=self.fg, wraplength=360)
+        url_label.pack(padx=16, pady=(4, 12))
+
+        close_btn = tk.Button(
+            win,
+            text="Close",
+            command=win.destroy,
+            bg=self.button_bg,
+            fg=self.button_fg,
+            activebackground=self.button_bg,
+            activeforeground=self.button_fg,
+            width=12,
+        )
+        close_btn.pack(pady=(0, 14))
+
+    def start_remote_server(self):
+        if self.remote_running:
+            self.refresh_remote_labels()
+            self.status_var.set("Phone Remote is already running.")
+            return
+
+        try:
+            from flask import Flask, redirect, request
+        except Exception as e:
+            messagebox.showerror(
+                "Flask missing",
+                "Flask is not installed for this Python environment.\n\nInstall it with:\n\npip install flask"
+            )
+            return
+
+        try:
+            port = int(self.web_port_var.get())
+            if port < 1 or port > 65535:
+                raise ValueError
+        except Exception:
+            messagebox.showerror("Invalid web port", "Web port must be a number from 1 to 65535.")
+            return
+
+        self.web_port = port
+        self.config["web_port"] = port
+        try:
+            save_json(self.current_config_path, self.config)
+        except Exception:
+            pass
+
+        flask_app = Flask(__name__)
+        desktop_app = self
+
+        def render_remote_page(board_idx=None):
+            if board_idx is None:
+                board_idx = desktop_app.active_tab
+            try:
+                board_idx = int(board_idx)
+            except Exception:
+                board_idx = desktop_app.active_tab
+            board_idx = max(0, min(4, board_idx))
+
+            if board_idx != desktop_app.active_tab:
+                desktop_app.root.after(0, lambda idx=board_idx: desktop_app.switch_tab(idx))
+
+            path = config_path_from_tab(desktop_app.settings["tabs"][board_idx])
+            try:
+                page_config = normalise_config(load_json(path))
+            except Exception:
+                page_config = normalise_config(DEFAULT_CONFIG.copy())
+
+            board_name = html.escape(display_name_from_file(path))
+            try:
+                last_sent_raw = desktop_app.board_phrase_var.get() if hasattr(desktop_app, "board_phrase_var") else "Last sent: none"
+            except Exception:
+                last_sent_raw = "Last sent: none"
+            last_sent = html.escape(last_sent_raw)
+            phrases = page_config.get("phrases", [])
+            prev_idx = (board_idx - 1) % 5
+            next_idx = (board_idx + 1) % 5
+            tab_label = f"Board {board_idx + 1} of 5"
+            buttons = []
+            for idx, phrase in enumerate(phrases):
+                en = html.escape(str(phrase.get("button_en", "")).strip())
+                ja = html.escape(str(phrase.get("button_ja", "")).strip())
+                label = (en + ("<br>" if en and ja else "") + ja) or f"Empty {idx + 1}"
+                buttons.append(
+                    f'<form method="post" action="/send/{board_idx}/{idx}">'
+                    f'<button class="btn" type="submit">{label}</button>'
+                    f'</form>'
+                )
+            return """<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone Remote</title>
+<style>
+*{box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#151515;color:#f4f4f4;margin:0;padding:14px;}
+.topbar{display:grid;grid-template-columns:72px minmax(0,1fr) 72px;gap:10px;align-items:stretch;margin-bottom:10px;}
+.arrowform{margin:0;}
+.arrow{display:flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:14px;background:#305c8b;color:#fff;font-size:42px;font-weight:900;min-height:74px;line-height:1;width:100%;height:100%;}
+.currenttab{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:14px;background:#202020;border:1px solid #444;padding:10px 8px;min-height:74px;}
+.currenttab .small{font-size:13px;color:#cfcfcf;margin-bottom:3px;}
+.currenttab .name{font-size:20px;font-weight:800;line-height:1.15;word-break:break-word;}
+.lastsent{border-radius:10px;background:#101010;border:1px solid #333;color:#dcdcdc;text-align:center;font-size:14px;margin:0 0 12px;padding:10px;min-height:38px;word-break:break-word;}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+form{margin:0;}
+.btn{width:100%;min-height:64px;border:0;border-radius:10px;background:#303030;color:#fff;font-size:15px;font-weight:bold;padding:8px;}
+.btn:active,.arrow:active{background:#247a3d;}
+@media (min-width:700px){.topbar{grid-template-columns:96px minmax(0,1fr) 96px;}.arrow{font-size:56px;min-height:86px;}.currenttab{min-height:86px;}.currenttab .name{font-size:24px;}.grid{grid-template-columns:repeat(4,minmax(0,1fr));}.btn{min-height:72px;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<form class="arrowform" method="get" action="/tab/""" + str(prev_idx) + """"><button class="arrow" type="submit" aria-label="Previous board">&#9664;</button></form>
+<div class="currenttab"><div class="small">Current tab """ + html.escape(tab_label) + """</div><div class="name">""" + board_name + """</div></div>
+<form class="arrowform" method="get" action="/tab/""" + str(next_idx) + """"><button class="arrow" type="submit" aria-label="Next board">&#9654;</button></form>
+</div>
+<div class="lastsent">""" + last_sent + """</div>
+<div class="grid">
+""" + "\n".join(buttons) + """
+</div>
+</body>
+</html>"""
+
+        @flask_app.route("/", methods=["GET"])
+        def remote_index():
+            board_arg = request.args.get("board", None)
+            return render_remote_page(board_arg)
+
+        @flask_app.route("/tab/<int:board_idx>", methods=["GET", "POST"])
+        def remote_switch_tab(board_idx):
+            board_idx = max(0, min(4, board_idx))
+            return render_remote_page(board_idx)
+
+        @flask_app.route("/send/<int:board_idx>/<int:idx>", methods=["POST"])
+        def remote_send(board_idx, idx):
+            board_idx = max(0, min(4, board_idx))
+            desktop_app.root.after(0, lambda: desktop_app.remote_click_phrase(board_idx, idx))
+            return redirect(f"/tab/{board_idx}", code=303)
+
+        def run_server():
+            flask_app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
+
+        self.remote_thread = threading.Thread(target=run_server, daemon=True)
+        self.remote_thread.start()
+        self.remote_running = True
+        self.remote_status_var.set("Running")
+        self.refresh_remote_labels()
+        self.status_var.set(f"Phone Remote running at {self.remote_url_var.get()}")
+
+    def remote_click_phrase(self, board_idx, idx):
+        if self.cooldown_remaining > 0:
+            return
+        if board_idx != self.active_tab:
+            self.switch_tab(board_idx)
+        phrases = self.config.get("phrases", [])
+        if idx < 0 or idx >= len(phrases):
+            return
+        self.click_phrase(phrases[idx])
 
     def build_ui(self):
         self.root.title("Mellish\'s Multilingual Mute Soundboard v1.0.1")
@@ -254,6 +505,66 @@ class PhraseBoardApp:
             width=10,
         )
         self.apply_settings_button.pack(side="left", padx=(10, 0))
+
+        self.remote_frame = tk.LabelFrame(self.top, text="Phone Remote", bg=self.bg, fg=self.fg, padx=8, pady=6)
+        self.remote_frame.pack(fill="x", pady=(6, 0))
+
+        self.remote_status_var = tk.StringVar(value="Running" if self.remote_running else "Stopped")
+        self.local_ip_var = tk.StringVar(value=self.get_local_ip())
+        self.web_port_var = tk.StringVar(value=str(self.config.get("web_port", 8787)))
+        self.remote_url_var = tk.StringVar(value=self.get_remote_url())
+
+        tk.Label(self.remote_frame, text="Status:", bg=self.bg, fg=self.fg).pack(side="left")
+        self.remote_status_label = tk.Label(self.remote_frame, textvariable=self.remote_status_var, bg=self.bg, fg=self.fg, width=9, anchor="w")
+        self.remote_status_label.pack(side="left", padx=(4, 12))
+
+        tk.Label(self.remote_frame, text="Local IP:", bg=self.bg, fg=self.fg).pack(side="left")
+        self.local_ip_label = tk.Label(self.remote_frame, textvariable=self.local_ip_var, bg=self.bg, fg=self.fg, width=15, anchor="w")
+        self.local_ip_label.pack(side="left", padx=(4, 12))
+
+        tk.Label(self.remote_frame, text="Web port:", bg=self.bg, fg=self.fg).pack(side="left")
+        self.web_port_entry = tk.Entry(self.remote_frame, textvariable=self.web_port_var, width=7, bg=self.entry_bg, fg=self.entry_fg)
+        self.web_port_entry.pack(side="left", padx=(4, 12))
+
+        tk.Label(self.remote_frame, text="URL:", bg=self.bg, fg=self.fg).pack(side="left")
+        self.remote_url_label = tk.Label(self.remote_frame, textvariable=self.remote_url_var, bg=self.bg, fg=self.fg, anchor="w")
+        self.remote_url_label.pack(side="left", fill="x", expand=True, padx=(4, 12))
+
+        self.qr_button = tk.Button(
+            self.remote_frame,
+            text="QR Code",
+            command=self.show_qr_window,
+            bg=self.button_bg,
+            fg=self.button_fg,
+            activebackground=self.button_bg,
+            activeforeground=self.button_fg,
+            width=10,
+        )
+        self.qr_button.pack(side="left", padx=(0, 6))
+
+        self.start_remote_button = tk.Button(
+            self.remote_frame,
+            text="Start Remote",
+            command=self.start_remote_server,
+            bg=self.button_bg,
+            fg=self.button_fg,
+            activebackground=self.button_bg,
+            activeforeground=self.button_fg,
+            width=13,
+        )
+        self.start_remote_button.pack(side="left", padx=(0, 6))
+
+        self.copy_url_button = tk.Button(
+            self.remote_frame,
+            text="Copy URL",
+            command=self.copy_remote_url,
+            bg=self.button_bg,
+            fg=self.button_fg,
+            activebackground=self.button_bg,
+            activeforeground=self.button_fg,
+            width=10,
+        )
+        self.copy_url_button.pack(side="left")
 
         self.status_var = tk.StringVar(value="Ready.")
         self.status_label = tk.Label(self.top, textvariable=self.status_var, bg=self.bg, fg=self.fg)
@@ -406,6 +717,10 @@ class PhraseBoardApp:
             self.osc_ip_var.set(self.osc_ip)
             self.osc_port_var.set(str(self.osc_port))
             self.cooldown_var.set(str(self.cooldown_seconds))
+        if hasattr(self, "web_port_var"):
+            self.web_port = int(self.config.get("web_port", self.web_port))
+            self.web_port_var.set(str(self.web_port))
+            self.refresh_remote_labels()
         board_name = display_name_from_file(self.current_config_path)
         if hasattr(self, "board_title_var"):
             self.board_title_var.set(board_name)
@@ -526,6 +841,9 @@ class PhraseBoardApp:
         ]:
             widget.configure(state=state)
 
+        if hasattr(self, "web_port_entry"):
+            self.web_port_entry.configure(state=state)
+
         for b in self.tab_buttons + self.load_buttons:
             b.configure(state=state)
 
@@ -561,7 +879,12 @@ class PhraseBoardApp:
             messagebox.showerror("Invalid JSON", f"Could not load JSON:\n\n{e}")
             return
 
-        self.settings["tabs"][idx]["file"] = str(path)
+        try:
+            stored_path = str(path.relative_to(APP_DIR))
+        except Exception:
+            stored_path = str(path)
+
+        self.settings["tabs"][idx]["file"] = stored_path
         self.active_tab = idx
         self.settings["active_tab"] = idx
         self.current_config_path = path
