@@ -1,0 +1,3 @@
+@echo off
+python Mellishs_Multilingual_Mute_Soundboard_v1_2.py
+pause
