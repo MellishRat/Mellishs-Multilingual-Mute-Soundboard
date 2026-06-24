@@ -8,11 +8,13 @@ It was originally built to help communicate with Japanese VRChat users during ho
 
 ## Screenshots
 
-> Replace these placeholder PNGs with your real screenshots using the same filenames.
-
 ### Desktop Soundboard
 
 ![Desktop Soundboard](screenshots/desktop_soundboard.png)
+
+### Editor Soundboard
+
+![Desktop Soundboard](screenshots/Editor.png)
 
 ### Phone Remote
 
