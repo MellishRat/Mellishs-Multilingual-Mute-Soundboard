@@ -1,0 +1,332 @@
+{
+  "osc_ip": "127.0.0.1",
+  "osc_port": 9000,
+  "cooldown_seconds": 5,
+  "dark_mode": true,
+  "columns": 8,
+  "window_width": 1280,
+  "window_height": 820,
+  "phrases": [
+    {
+      "button_en": "Clear",
+      "button_ja": "消去",
+      "message": "",
+      "is_clear": true
+    },
+    {
+      "button_en": "Enable URLs",
+      "button_ja": "Untrusted URLsを有効にしてください",
+      "message": "Please enable Untrusted URLs / Untrusted URLsを有効にしてください / Antrusted URLs o yuukou ni shite kudasai"
+    },
+    {
+      "button_en": "Enable OSC",
+      "button_ja": "OSCを有効にしてください",
+      "message": "Please enable OSC / OSCを有効にしてください / OSC o yuukou ni shite kudasai"
+    },
+    {
+      "button_en": "Rejoin world",
+      "button_ja": "ワールドに入り直してください",
+      "message": "Please rejoin the world / ワールドに入り直してください / Waarudo ni hairinaoshite kudasai"
+    },
+    {
+      "button_en": "Restart VRChat",
+      "button_ja": "VRChatを再起動してください",
+      "message": "Please restart VRChat / VRChatを再起動してください / VRChat o saikidou shite kudasai"
+    },
+    {
+      "button_en": "Can't hear you",
+      "button_ja": "聞こえません",
+      "message": "I can't hear you / 聞こえません / Kikoemasen"
+    },
+    {
+      "button_en": "Can you hear me?",
+      "button_ja": "私の声は聞こえますか？",
+      "message": "Can you hear me? / 私の声は聞こえますか？ / Watashi no koe wa kikoemasu ka?"
+    },
+    {
+      "button_en": "Mic muted",
+      "button_ja": "マイクがミュートになっています",
+      "message": "Your microphone is muted / マイクがミュートになっています / Maiku ga myuuto ni natte imasu"
+    },
+    {
+      "button_en": "Check mic",
+      "button_ja": "マイクを確認してください",
+      "message": "Please check your microphone / マイクを確認してください / Maiku o kakunin shite kudasai"
+    },
+    {
+      "button_en": "Can you see this?",
+      "button_ja": "これは見えますか？",
+      "message": "Can you see this? / これは見えますか？ / Kore wa miemasu ka?"
+    },
+    {
+      "button_en": "Board visible?",
+      "button_ja": "ボードは見えますか？",
+      "message": "Can you see the board? / ボードは見えますか？ / Boodo wa miemasu ka?"
+    },
+    {
+      "button_en": "Avatar hidden",
+      "button_ja": "あなたのアバターが見えません",
+      "message": "I can't see your avatar / あなたのアバターが見えません / Anata no abataa ga miemasen"
+    },
+    {
+      "button_en": "Avatar blocked",
+      "button_ja": "アバターがブロックされているかもしれません",
+      "message": "Your avatar may be blocked / アバターがブロックされているかもしれません / Abataa ga burokku sarete iru kamo shiremasen"
+    },
+    {
+      "button_en": "Change avatar",
+      "button_ja": "アバターを変更してみてください",
+      "message": "Please try changing avatars / アバターを変更してみてください / Abataa o henkou shite mite kudasai"
+    },
+    {
+      "button_en": "Avatar laggy",
+      "button_ja": "アバターが重いようです",
+      "message": "Your avatar seems very laggy / アバターが重いようです / Abataa ga omoi you desu"
+    },
+    {
+      "button_en": "Lights laggy",
+      "button_ja": "ライトが重いかもしれません",
+      "message": "I think the lights might be causing lag / ライトが重いかもしれません / Raito ga omoi kamo shiremasen"
+    },
+    {
+      "button_en": "Particles laggy",
+      "button_ja": "パーティクルが重いかもしれません",
+      "message": "I think the particles might be causing lag / パーティクルが重いかもしれません / Paatikuru ga omoi kamo shiremasen"
+    },
+    {
+      "button_en": "Shader laggy",
+      "button_ja": "シェーダーが重いかもしれません",
+      "message": "I think the shader might be causing lag / シェーダーが重いかもしれません / Sheedaa ga omoi kamo shiremasen"
+    },
+    {
+      "button_en": "Avatar nearby lag",
+      "button_ja": "近くのアバターがラグの原因かもしれません",
+      "message": "An avatar nearby might be causing lag / 近くのアバターがラグの原因かもしれません / Chikaku no abataa ga ragu no gen'in kamo shiremasen"
+    },
+    {
+      "button_en": "World lagging",
+      "button_ja": "ワールドが重いです",
+      "message": "The world is lagging / ワールドが重いです / Waarudo ga omoi desu"
+    },
+    {
+      "button_en": "My FPS low",
+      "button_ja": "FPSが低いです",
+      "message": "My FPS is low / FPSが低いです / FPS ga hikui desu"
+    },
+    {
+      "button_en": "Safety settings",
+      "button_ja": "セーフティ設定を確認してください",
+      "message": "Please check your safety settings / セーフティ設定を確認してください / Seefutii settei o kakunin shite kudasai"
+    },
+    {
+      "button_en": "Show avatars",
+      "button_ja": "アバター表示を有効にしてください",
+      "message": "Please enable avatar display / アバター表示を有効にしてください / Abataa hyouji o yuukou ni shite kudasai"
+    },
+    {
+      "button_en": "Interactions on",
+      "button_ja": "アバターのインタラクションを有効にしてください",
+      "message": "Please enable avatar interactions / アバターのインタラクションを有効にしてください / Abataa no intarakushon o yuukou ni shite kudasai"
+    },
+    {
+      "button_en": "Interactions off",
+      "button_ja": "アバターのインタラクションを無効にしてください",
+      "message": "Please disable avatar interactions / アバターのインタラクションを無効にしてください / Abataa no intarakushon o mukou ni shite kudasai"
+    },
+    {
+      "button_en": "Personal mirror",
+      "button_ja": "パーソナルミラーを使ってください",
+      "message": "Please use your personal mirror / パーソナルミラーを使ってください / Paasonaru miraa o tsukatte kudasai"
+    },
+    {
+      "button_en": "Quest?",
+      "button_ja": "Questですか？",
+      "message": "Are you on Quest? / Questですか？ / Quest desu ka?"
+    },
+    {
+      "button_en": "PCVR?",
+      "button_ja": "PCVRですか？",
+      "message": "Are you on PCVR? / PCVRですか？ / PCVR desu ka?"
+    },
+    {
+      "button_en": "Desktop?",
+      "button_ja": "デスクトップですか？",
+      "message": "Are you on desktop? / デスクトップですか？ / Desukutoppu desu ka?"
+    },
+    {
+      "button_en": "VR?",
+      "button_ja": "VRですか？",
+      "message": "Are you in VR? / VRですか？ / VR desu ka?"
+    },
+    {
+      "button_en": "Quest issue",
+      "button_ja": "Questでは見えないかもしれません",
+      "message": "It might not be visible on Quest / Questでは見えないかもしれません / Quest de wa mienai kamo shiremasen"
+    },
+    {
+      "button_en": "PC only",
+      "button_ja": "これはPC専用かもしれません",
+      "message": "This might be PC only / これはPC専用かもしれません / Kore wa PC senyou kamo shiremasen"
+    },
+    {
+      "button_en": "Reload avatars",
+      "button_ja": "アバターを再読み込みしてください",
+      "message": "Please reload avatars / アバターを再読み込みしてください / Abataa o yomikomi shinaoshite kudasai"
+    },
+    {
+      "button_en": "Clear cache",
+      "button_ja": "キャッシュを削除してみてください",
+      "message": "Try clearing your cache / キャッシュを削除してみてください / Kyasshu o sakujo shite mite kudasai"
+    },
+    {
+      "button_en": "Instance full",
+      "button_ja": "インスタンスが満員です",
+      "message": "The instance is full / インスタンスが満員です / Insutansu ga man'in desu"
+    },
+    {
+      "button_en": "Invite only",
+      "button_ja": "招待のみです",
+      "message": "It is invite only / 招待のみです / Shoutai nomi desu"
+    },
+    {
+      "button_en": "Join failed",
+      "button_ja": "参加に失敗しました",
+      "message": "Joining failed / 参加に失敗しました / Sanka ni shippai shimashita"
+    },
+    {
+      "button_en": "Portal failed",
+      "button_ja": "ポータルが失敗しました",
+      "message": "The portal failed / ポータルが失敗しました / Pootaru ga shippai shimashita"
+    },
+    {
+      "button_en": "Drop portal again",
+      "button_ja": "もう一度ポータルを出してください",
+      "message": "Please drop the portal again / もう一度ポータルを出してください / Mou ichido pootaru o dashite kudasai"
+    },
+    {
+      "button_en": "Link not loading",
+      "button_ja": "リンクが読み込めません",
+      "message": "The link is not loading / リンクが読み込めません / Rinku ga yomikomemasen"
+    },
+    {
+      "button_en": "Website blocked",
+      "button_ja": "ウェブサイトがブロックされているかもしれません",
+      "message": "The website may be blocked / ウェブサイトがブロックされているかもしれません / Webusaito ga burokku sarete iru kamo shiremasen"
+    },
+    {
+      "button_en": "Try later",
+      "button_ja": "後でもう一度試してください",
+      "message": "Please try again later / 後でもう一度試してください / Ato de mou ichido tameshite kudasai"
+    },
+    {
+      "button_en": "I crashed",
+      "button_ja": "クラッシュしました",
+      "message": "I crashed / クラッシュしました / Kurasshu shimashita"
+    },
+    {
+      "button_en": "You crashed?",
+      "button_ja": "クラッシュしましたか？",
+      "message": "Did you crash? / クラッシュしましたか？ / Kurasshu shimashita ka?"
+    },
+    {
+      "button_en": "I'm loading",
+      "button_ja": "読み込み中です",
+      "message": "I am loading / 読み込み中です / Yomikomi-chuu desu"
+    },
+    {
+      "button_en": "Still loading",
+      "button_ja": "まだ読み込み中です",
+      "message": "I am still loading / まだ読み込み中です / Mada yomikomi-chuu desu"
+    },
+    {
+      "button_en": "Sync issue",
+      "button_ja": "同期の問題かもしれません",
+      "message": "It might be a sync issue / 同期の問題かもしれません / Douki no mondai kamo shiremasen"
+    },
+    {
+      "button_en": "Udon issue",
+      "button_ja": "Udonの問題かもしれません",
+      "message": "It might be a Udon issue / Udonの問題かもしれません / Udon no mondai kamo shiremasen"
+    },
+    {
+      "button_en": "Button broken",
+      "button_ja": "ボタンが壊れているかもしれません",
+      "message": "The button might be broken / ボタンが壊れているかもしれません / Botan ga kowarete iru kamo shiremasen"
+    },
+    {
+      "button_en": "Try button again",
+      "button_ja": "もう一度ボタンを押してください",
+      "message": "Please press the button again / もう一度ボタンを押してください / Mou ichido botan o oshite kudasai"
+    },
+    {
+      "button_en": "Too loud",
+      "button_ja": "音が大きすぎます",
+      "message": "The sound is too loud / 音が大きすぎます / Oto ga ookisugimasu"
+    },
+    {
+      "button_en": "Too quiet",
+      "button_ja": "音が小さすぎます",
+      "message": "The sound is too quiet / 音が小さすぎます / Oto ga chiisasugimasu"
+    },
+    {
+      "button_en": "Volume down",
+      "button_ja": "音量を下げてください",
+      "message": "Please lower the volume / 音量を下げてください / Onryou o sagete kudasai"
+    },
+    {
+      "button_en": "Volume up",
+      "button_ja": "音量を上げてください",
+      "message": "Please raise the volume / 音量を上げてください / Onryou o agete kudasai"
+    },
+    {
+      "button_en": "Motion sickness",
+      "button_ja": "少し酔いました",
+      "message": "I feel a little motion sick / 少し酔いました / Sukoshi yoimashita"
+    },
+    {
+      "button_en": "Need comfort",
+      "button_ja": "コンフォート設定が必要です",
+      "message": "I need comfort settings / コンフォート設定が必要です / Konfooto settei ga hitsuyou desu"
+    },
+    {
+      "button_en": "Too bright",
+      "button_ja": "明るすぎます",
+      "message": "It is too bright / 明るすぎます / Akarusugimasu"
+    },
+    {
+      "button_en": "Too dark",
+      "button_ja": "暗すぎます",
+      "message": "It is too dark / 暗すぎます / Kurasugimasu"
+    },
+    {
+      "button_en": "Mirror off?",
+      "button_ja": "ミラーを消してもいいですか？",
+      "message": "Can we turn off the mirror? / ミラーを消してもいいですか？ / Miraa o keshite mo ii desu ka?"
+    },
+    {
+      "button_en": "Lights off?",
+      "button_ja": "ライトを消してもいいですか？",
+      "message": "Can we turn off the lights? / ライトを消してもいいですか？ / Raito o keshite mo ii desu ka?"
+    },
+    {
+      "button_en": "Check settings",
+      "button_ja": "設定を確認してください",
+      "message": "Please check your settings / 設定を確認してください / Settei o kakunin shite kudasai"
+    },
+    {
+      "button_en": "I need help",
+      "button_ja": "助けが必要です",
+      "message": "I need help / 助けが必要です / Tasuke ga hitsuyou desu"
+    },
+    {
+      "button_en": "Fixed now",
+      "button_ja": "直りました",
+      "message": "It is fixed now / 直りました / Naorimashita"
+    },
+    {
+      "button_en": "Still broken",
+      "button_ja": "まだ壊れています",
+      "message": "It is still broken / まだ壊れています / Mada kowarete imasu"
+    }
+  ]
+}

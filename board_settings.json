@@ -1,0 +1,21 @@
+{
+  "dark_mode": true,
+  "active_tab": 0,
+  "tabs": [
+    {
+      "file": "everyday_conversation.json"
+    },
+    {
+      "file": "general_social.json"
+    },
+    {
+      "file": "vrchat_technical.json"
+    },
+    {
+      "file": "flirty_social.json"
+    },
+    {
+      "file": "board_5.json"
+    }
+  ]
+}

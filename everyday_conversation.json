@@ -1,0 +1,332 @@
+{
+  "osc_ip": "127.0.0.1",
+  "osc_port": 9000,
+  "cooldown_seconds": 5,
+  "dark_mode": true,
+  "columns": 8,
+  "window_width": 1280,
+  "window_height": 820,
+  "phrases": [
+    {
+      "button_en": "Clear",
+      "button_ja": "消去",
+      "message": "",
+      "is_clear": true
+    },
+    {
+      "button_en": "Weather there?",
+      "button_ja": "そちらの天気はどうですか？",
+      "message": "What's the weather like there? / そちらの天気はどうですか？ / Sochira no tenki wa dou desu ka?"
+    },
+    {
+      "button_en": "Hot today",
+      "button_ja": "今日はとても暑いです",
+      "message": "It's very hot today / 今日はとても暑いです / Kyou wa totemo atsui desu"
+    },
+    {
+      "button_en": "Cold today",
+      "button_ja": "今日はとても寒いです",
+      "message": "It's very cold today / 今日はとても寒いです / Kyou wa totemo samui desu"
+    },
+    {
+      "button_en": "Raining",
+      "button_ja": "雨が降っています",
+      "message": "It's raining / 雨が降っています / Ame ga futte imasu"
+    },
+    {
+      "button_en": "Sunny",
+      "button_ja": "晴れています",
+      "message": "It's sunny / 晴れています / Harete imasu"
+    },
+    {
+      "button_en": "Snowing?",
+      "button_ja": "雪が降っていますか？",
+      "message": "Is it snowing? / 雪が降っていますか？ / Yuki ga futte imasu ka?"
+    },
+    {
+      "button_en": "Time there?",
+      "button_ja": "そちらは今何時ですか？",
+      "message": "What time is it where you are? / そちらは今何時ですか？ / Sochira wa ima nanji desu ka?"
+    },
+    {
+      "button_en": "It's late",
+      "button_ja": "こちらはもう遅い時間です",
+      "message": "It's late where I am / こちらはもう遅い時間です / Kochira wa mou osoi jikan desu"
+    },
+    {
+      "button_en": "Early here",
+      "button_ja": "こちらはまだ早い時間です",
+      "message": "It's still early here / こちらはまだ早い時間です / Kochira wa mada hayai jikan desu"
+    },
+    {
+      "button_en": "Need sleep",
+      "button_ja": "そろそろ寝ます",
+      "message": "I should sleep soon / そろそろ寝ます / Sorosoro nemasu"
+    },
+    {
+      "button_en": "Just woke up",
+      "button_ja": "今起きました",
+      "message": "I just woke up / 今起きました / Ima okimashita"
+    },
+    {
+      "button_en": "Going work",
+      "button_ja": "これから仕事に行きます",
+      "message": "I'm heading off to work / これから仕事に行きます / Kore kara shigoto ni ikimasu"
+    },
+    {
+      "button_en": "Home from work",
+      "button_ja": "仕事から帰ってきました",
+      "message": "I just got home from work / 仕事から帰ってきました / Shigoto kara kaette kimashita"
+    },
+    {
+      "button_en": "Day off",
+      "button_ja": "今日は休みです",
+      "message": "I have the day off / 今日は休みです / Kyou wa yasumi desu"
+    },
+    {
+      "button_en": "Holiday",
+      "button_ja": "今週は休暇です",
+      "message": "I'm on holiday this week / 今週は休暇です / Konshuu wa kyuuka desu"
+    },
+    {
+      "button_en": "Tired today",
+      "button_ja": "今日は少し疲れています",
+      "message": "I'm a little tired today / 今日は少し疲れています / Kyou wa sukoshi tsukarete imasu"
+    },
+    {
+      "button_en": "Feeling good",
+      "button_ja": "今日は調子がいいです",
+      "message": "I'm feeling good today / 今日は調子がいいです / Kyou wa choushi ga ii desu"
+    },
+    {
+      "button_en": "Not great",
+      "button_ja": "今日はあまり調子がよくないです",
+      "message": "I'm not feeling great today / 今日はあまり調子がよくないです / Kyou wa amari choushi ga yokunai desu"
+    },
+    {
+      "button_en": "Drinking tea",
+      "button_ja": "お茶を飲んでいます",
+      "message": "I'm drinking tea / お茶を飲んでいます / Ocha o nonde imasu"
+    },
+    {
+      "button_en": "Drinking coffee",
+      "button_ja": "コーヒーを飲んでいます",
+      "message": "I'm drinking coffee / コーヒーを飲んでいます / Koohii o nonde imasu"
+    },
+    {
+      "button_en": "Eating now",
+      "button_ja": "今ご飯を食べています",
+      "message": "I'm eating now / 今ご飯を食べています / Ima gohan o tabete imasu"
+    },
+    {
+      "button_en": "Be right back",
+      "button_ja": "すぐ戻ります",
+      "message": "I'll be right back / すぐ戻ります / Sugu modorimasu"
+    },
+    {
+      "button_en": "What games?",
+      "button_ja": "どんなゲームをしますか？",
+      "message": "What games do you play? / どんなゲームをしますか？ / Donna geemu o shimasu ka?"
+    },
+    {
+      "button_en": "Anime?",
+      "button_ja": "アニメを見ますか？",
+      "message": "Do you watch anime? / アニメを見ますか？ / Anime o mimasu ka?"
+    },
+    {
+      "button_en": "Music?",
+      "button_ja": "どんな音楽が好きですか？",
+      "message": "What music do you like? / どんな音楽が好きですか？ / Donna ongaku ga suki desu ka?"
+    },
+    {
+      "button_en": "Food?",
+      "button_ja": "好きな食べ物は何ですか？",
+      "message": "What's your favourite food? / 好きな食べ物は何ですか？ / Suki na tabemono wa nan desu ka?"
+    },
+    {
+      "button_en": "Movie?",
+      "button_ja": "好きな映画は何ですか？",
+      "message": "What's your favourite movie? / 好きな映画は何ですか？ / Suki na eiga wa nan desu ka?"
+    },
+    {
+      "button_en": "Hobbies?",
+      "button_ja": "趣味は何ですか？",
+      "message": "What are your hobbies? / 趣味は何ですか？ / Shumi wa nan desu ka?"
+    },
+    {
+      "button_en": "Pets?",
+      "button_ja": "ペットはいますか？",
+      "message": "Do you have pets? / ペットはいますか？ / Petto wa imasu ka?"
+    },
+    {
+      "button_en": "VR often?",
+      "button_ja": "よくVRChatに来ますか？",
+      "message": "Do you come to VRChat often? / よくVRChatに来ますか？ / Yoku VRChat ni kimasu ka?"
+    },
+    {
+      "button_en": "How long VR?",
+      "button_ja": "VRChatをどのくらいやっていますか？",
+      "message": "How long have you played VRChat? / VRChatをどのくらいやっていますか？ / VRChat o dono kurai yatte imasu ka?"
+    },
+    {
+      "button_en": "Favourite world?",
+      "button_ja": "好きなワールドは何ですか？",
+      "message": "What's your favourite world? / 好きなワールドは何ですか？ / Suki na waarudo wa nan desu ka?"
+    },
+    {
+      "button_en": "Favourite avatar?",
+      "button_ja": "好きなアバターは何ですか？",
+      "message": "What's your favourite avatar? / 好きなアバターは何ですか？ / Suki na abataa wa nan desu ka?"
+    },
+    {
+      "button_en": "Good weekend?",
+      "button_ja": "週末は楽しかったですか？",
+      "message": "Did you have a good weekend? / 週末は楽しかったですか？ / Shuumatsu wa tanoshikatta desu ka?"
+    },
+    {
+      "button_en": "Plans tomorrow?",
+      "button_ja": "明日の予定はありますか？",
+      "message": "Do you have plans tomorrow? / 明日の予定はありますか？ / Ashita no yotei wa arimasu ka?"
+    },
+    {
+      "button_en": "Busy today?",
+      "button_ja": "今日は忙しいですか？",
+      "message": "Are you busy today? / 今日は忙しいですか？ / Kyou wa isogashii desu ka?"
+    },
+    {
+      "button_en": "Relaxing",
+      "button_ja": "今日はゆっくりしています",
+      "message": "I'm relaxing today / 今日はゆっくりしています / Kyou wa yukkuri shite imasu"
+    },
+    {
+      "button_en": "Cleaning",
+      "button_ja": "今日は掃除をしています",
+      "message": "I'm cleaning today / 今日は掃除をしています / Kyou wa souji o shite imasu"
+    },
+    {
+      "button_en": "Shopping",
+      "button_ja": "買い物に行きます",
+      "message": "I'm going shopping / 買い物に行きます / Kaimono ni ikimasu"
+    },
+    {
+      "button_en": "Cooking",
+      "button_ja": "料理をしています",
+      "message": "I'm cooking / 料理をしています / Ryouri o shite imasu"
+    },
+    {
+      "button_en": "UK time",
+      "button_ja": "こちらはイギリス時間です",
+      "message": "I am on UK time / こちらはイギリス時間です / Kochira wa Igirisu jikan desu"
+    },
+    {
+      "button_en": "Different time",
+      "button_ja": "時差がありますね",
+      "message": "There is a time difference / 時差がありますね / Jisa ga arimasu ne"
+    },
+    {
+      "button_en": "It's morning",
+      "button_ja": "こちらは朝です",
+      "message": "It's morning here / こちらは朝です / Kochira wa asa desu"
+    },
+    {
+      "button_en": "It's afternoon",
+      "button_ja": "こちらは午後です",
+      "message": "It's afternoon here / こちらは午後です / Kochira wa gogo desu"
+    },
+    {
+      "button_en": "It's evening",
+      "button_ja": "こちらは夜です",
+      "message": "It's evening here / こちらは夜です / Kochira wa yoru desu"
+    },
+    {
+      "button_en": "Stay safe",
+      "button_ja": "気をつけてください",
+      "message": "Please stay safe / 気をつけてください / Ki o tsukete kudasai"
+    },
+    {
+      "button_en": "Good day",
+      "button_ja": "良い一日を",
+      "message": "Have a good day / 良い一日を / Yoi ichinichi o"
+    },
+    {
+      "button_en": "Good night",
+      "button_ja": "おやすみなさい",
+      "message": "Have a good night / おやすみなさい / Oyasumi nasai"
+    },
+    {
+      "button_en": "See next time",
+      "button_ja": "また次回会いましょう",
+      "message": "See you next time / また次回会いましょう / Mata jikai aimashou"
+    },
+    {
+      "button_en": "Thanks today",
+      "button_ja": "今日はありがとうございました",
+      "message": "Thank you for today / 今日はありがとうございました / Kyou wa arigatou gozaimashita"
+    },
+    {
+      "button_en": "Talk later",
+      "button_ja": "後で話しましょう",
+      "message": "Let's talk later / 後で話しましょう / Ato de hanashimashou"
+    },
+    {
+      "button_en": "Message later",
+      "button_ja": "後でメッセージします",
+      "message": "I'll message later / 後でメッセージします / Ato de messeeji shimasu"
+    },
+    {
+      "button_en": "I need to go",
+      "button_ja": "そろそろ行かないといけません",
+      "message": "I need to go soon / そろそろ行かないといけません / Sorosoro ikanai to ikemasen"
+    },
+    {
+      "button_en": "Back tomorrow",
+      "button_ja": "明日また来ます",
+      "message": "I'll be back tomorrow / 明日また来ます / Ashita mata kimasu"
+    },
+    {
+      "button_en": "Next week",
+      "button_ja": "来週また会いましょう",
+      "message": "Let's meet again next week / 来週また会いましょう / Raishuu mata aimashou"
+    },
+    {
+      "button_en": "Nice chat",
+      "button_ja": "話せて楽しかったです",
+      "message": "It was nice talking with you / 話せて楽しかったです / Hanasete tanoshikatta desu"
+    },
+    {
+      "button_en": "Have fun",
+      "button_ja": "楽しんでください",
+      "message": "Have fun / 楽しんでください / Tanoshinde kudasai"
+    },
+    {
+      "button_en": "I'm learning",
+      "button_ja": "日本語を勉強中です",
+      "message": "I'm learning Japanese / 日本語を勉強中です / Nihongo o benkyou-chuu desu"
+    },
+    {
+      "button_en": "Please correct me",
+      "button_ja": "間違っていたら教えてください",
+      "message": "Please correct me if I'm wrong / 間違っていたら教えてください / Machigatte itara oshiete kudasai"
+    },
+    {
+      "button_en": "What does mean?",
+      "button_ja": "これはどういう意味ですか？",
+      "message": "What does this mean? / これはどういう意味ですか？ / Kore wa dou iu imi desu ka?"
+    },
+    {
+      "button_en": "That's interesting",
+      "button_ja": "面白いですね",
+      "message": "That's interesting / 面白いですね / Omoshiroi desu ne"
+    },
+    {
+      "button_en": "I agree",
+      "button_ja": "同意します",
+      "message": "I agree / 同意します / Doui shimasu"
+    },
+    {
+      "button_en": "I see",
+      "button_ja": "なるほど",
+      "message": "I see / なるほど / Naruhodo"
+    }
+  ]
+}

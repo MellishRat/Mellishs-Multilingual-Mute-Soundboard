@@ -1,0 +1,332 @@
+{
+  "osc_ip": "127.0.0.1",
+  "osc_port": 9000,
+  "cooldown_seconds": 5,
+  "dark_mode": true,
+  "columns": 8,
+  "window_width": 1280,
+  "window_height": 820,
+  "phrases": [
+    {
+      "button_en": "Clear",
+      "button_ja": "消去",
+      "message": "",
+      "is_clear": true
+    },
+    {
+      "button_en": "You look cute",
+      "button_ja": "かわいいですね",
+      "message": "You look cute / かわいいですね / Kawaii desu ne"
+    },
+    {
+      "button_en": "You look handsome",
+      "button_ja": "かっこいいですね",
+      "message": "You look handsome / かっこいいですね / Kakkoii desu ne"
+    },
+    {
+      "button_en": "Nice voice",
+      "button_ja": "素敵な声ですね",
+      "message": "You have a lovely voice / 素敵な声ですね / Suteki na koe desu ne"
+    },
+    {
+      "button_en": "Nice avatar",
+      "button_ja": "あなたのアバターが好きです",
+      "message": "I like your avatar / あなたのアバターが好きです / Anata no abataa ga suki desu"
+    },
+    {
+      "button_en": "Can I sit?",
+      "button_ja": "隣に座ってもいいですか？",
+      "message": "Can I sit next to you? / 隣に座ってもいいですか？ / Tonari ni suwatte mo ii desu ka?"
+    },
+    {
+      "button_en": "Can I cuddle?",
+      "button_ja": "ハグしてもいいですか？",
+      "message": "Can I cuddle you? / ハグしてもいいですか？ / Hagu shite mo ii desu ka?"
+    },
+    {
+      "button_en": "Can I hug?",
+      "button_ja": "抱きしめてもいいですか？",
+      "message": "Can I hug you? / 抱きしめてもいいですか？ / Dakishimete mo ii desu ka?"
+    },
+    {
+      "button_en": "Private room?",
+      "button_ja": "プライベートルームに行きますか？",
+      "message": "Do you want to go to a private room? / プライベートルームに行きますか？ / Puraibeeto ruumu ni ikimasu ka?"
+    },
+    {
+      "button_en": "Private world?",
+      "button_ja": "プライベートワールドに行きますか？",
+      "message": "Do you want to go to a private world? / プライベートワールドに行きますか？ / Puraibeeto waarudo ni ikimasu ka?"
+    },
+    {
+      "button_en": "Spend time?",
+      "button_ja": "一緒に過ごしませんか？",
+      "message": "Would you like to spend time together? / 一緒に過ごしませんか？ / Issho ni sugoshimasen ka?"
+    },
+    {
+      "button_en": "Get to know you",
+      "button_ja": "もっとあなたを知りたいです",
+      "message": "I'd like to get to know you better / もっとあなたを知りたいです / Motto anata o shiritai desu"
+    },
+    {
+      "button_en": "Are you single?",
+      "button_ja": "独身ですか？",
+      "message": "Are you single? / 独身ですか？ / Dokushin desu ka?"
+    },
+    {
+      "button_en": "Have partner?",
+      "button_ja": "パートナーはいますか？",
+      "message": "Do you have a partner? / パートナーはいますか？ / Paatonaa wa imasu ka?"
+    },
+    {
+      "button_en": "Flirting okay?",
+      "button_ja": "少しフリートしてもいいですか？",
+      "message": "Is light flirting okay? / 少しフリートしてもいいですか？ / Sukoshi furiito shite mo ii desu ka?"
+    },
+    {
+      "button_en": "Too much?",
+      "button_ja": "やりすぎですか？",
+      "message": "Is this too much? / やりすぎですか？ / Yarisugi desu ka?"
+    },
+    {
+      "button_en": "Tell me stop",
+      "button_ja": "嫌なら言ってください",
+      "message": "Please tell me if you want me to stop / 嫌なら言ってください / Iya nara itte kudasai"
+    },
+    {
+      "button_en": "Comfortable?",
+      "button_ja": "大丈夫ですか？",
+      "message": "Are you comfortable? / 大丈夫ですか？ / Daijoubu desu ka?"
+    },
+    {
+      "button_en": "Boundaries?",
+      "button_ja": "苦手なことはありますか？",
+      "message": "Do you have any boundaries? / 苦手なことはありますか？ / Nigate na koto wa arimasu ka?"
+    },
+    {
+      "button_en": "Avatar preference?",
+      "button_ja": "どんなアバターが好きですか？",
+      "message": "What kind of avatars do you like? / どんなアバターが好きですか？ / Donna abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Male avatars?",
+      "button_ja": "男性アバターが好きですか？",
+      "message": "Do you prefer male avatars? / 男性アバターが好きですか？ / Dansei abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Female avatars?",
+      "button_ja": "女性アバターが好きですか？",
+      "message": "Do you prefer female avatars? / 女性アバターが好きですか？ / Josei abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Androgynous?",
+      "button_ja": "中性的なアバターが好きですか？",
+      "message": "Do you like androgynous avatars? / 中性的なアバターが好きですか？ / Chuuseiteki na abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Humanoid?",
+      "button_ja": "ヒューマノイドアバターが好きですか？",
+      "message": "Do you like humanoid avatars? / ヒューマノイドアバターが好きですか？ / Hyuumanoido abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Furry?",
+      "button_ja": "ケモノアバターが好きですか？",
+      "message": "Do you like furry avatars? / ケモノアバターが好きですか？ / Kemono abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Fairy?",
+      "button_ja": "妖精アバターが好きですか？",
+      "message": "Do you like fairy avatars? / 妖精アバターが好きですか？ / Yousei abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Anime?",
+      "button_ja": "アニメ風アバターが好きですか？",
+      "message": "Do you like anime-style avatars? / アニメ風アバターが好きですか？ / Anime-fuu abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "E-girl?",
+      "button_ja": "Eガール系アバターが好きですか？",
+      "message": "Do you like e-girl avatars? / Eガール系アバターが好きですか？ / Ii gaaru-kei abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "E-boy?",
+      "button_ja": "Eボーイ系アバターが好きですか？",
+      "message": "Do you like e-boy avatars? / Eボーイ系アバターが好きですか？ / Ii booi-kei abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Booth avatars?",
+      "button_ja": "BOOTHのアバターが好きですか？",
+      "message": "Do you like BOOTH avatars? / BOOTHのアバターが好きですか？ / Buusu no abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Gumroad avatars?",
+      "button_ja": "Gumroadのアバターが好きですか？",
+      "message": "Do you like Gumroad avatars? / Gumroadのアバターが好きですか？ / Gumroad no abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Jinxxy avatars?",
+      "button_ja": "Jinxxyのアバターが好きですか？",
+      "message": "Do you like Jinxxy avatars? / Jinxxyのアバターが好きですか？ / Jinxxy no abataa ga suki desu ka?"
+    },
+    {
+      "button_en": "Cute or cool?",
+      "button_ja": "かわいい系とクール系、どちらが好きですか？",
+      "message": "Do you prefer cute or cool avatars? / かわいい系とクール系、どちらが好きですか？ / Kawaii-kei to kuuru-kei, dochira ga suki desu ka?"
+    },
+    {
+      "button_en": "Tall or small?",
+      "button_ja": "背が高いアバターと小さいアバター、どちらが好きですか？",
+      "message": "Do you prefer tall or small avatars? / 背が高いアバターと小さいアバター、どちらが好きですか？ / Se ga takai abataa to chiisai abataa, dochira ga suki desu ka?"
+    },
+    {
+      "button_en": "Top or bottom?",
+      "button_ja": "リードする方とされる方、どちらが好きですか？",
+      "message": "Do you prefer leading or being led? / リードする方とされる方、どちらが好きですか？ / Riido suru hou to sareru hou, dochira ga suki desu ka?"
+    },
+    {
+      "button_en": "Gentle or bold?",
+      "button_ja": "優しい感じと大胆な感じ、どちらが好きですか？",
+      "message": "Do you prefer gentle or bold? / 優しい感じと大胆な感じ、どちらが好きですか？ / Yasashii kanji to daitan na kanji, dochira ga suki desu ka?"
+    },
+    {
+      "button_en": "Slow pace?",
+      "button_ja": "ゆっくり進めたいですか？",
+      "message": "Do you want to take things slowly? / ゆっくり進めたいですか？ / Yukkuri susumetai desu ka?"
+    },
+    {
+      "button_en": "Closer?",
+      "button_ja": "もう少し近くに行ってもいいですか？",
+      "message": "Can I come a little closer? / もう少し近くに行ってもいいですか？ / Mou sukoshi chikaku ni itte mo ii desu ka?"
+    },
+    {
+      "button_en": "Hold hands?",
+      "button_ja": "手をつないでもいいですか？",
+      "message": "Can I hold your hand? / 手をつないでもいいですか？ / Te o tsunaide mo ii desu ka?"
+    },
+    {
+      "button_en": "Headpats?",
+      "button_ja": "頭をなでてもいいですか？",
+      "message": "Can I give you headpats? / 頭をなでてもいいですか？ / Atama o nadete mo ii desu ka?"
+    },
+    {
+      "button_en": "Want headpats?",
+      "button_ja": "頭をなでてほしいですか？",
+      "message": "Do you want headpats? / 頭をなでてほしいですか？ / Atama o nadete hoshii desu ka?"
+    },
+    {
+      "button_en": "Lap sit?",
+      "button_ja": "膝に座ってもいいですか？",
+      "message": "Can I sit on your lap? / 膝に座ってもいいですか？ / Hiza ni suwatte mo ii desu ka?"
+    },
+    {
+      "button_en": "Sit on me?",
+      "button_ja": "私の膝に座りますか？",
+      "message": "Do you want to sit on my lap? / 私の膝に座りますか？ / Watashi no hiza ni suwarimasu ka?"
+    },
+    {
+      "button_en": "Dance with me?",
+      "button_ja": "一緒に踊りませんか？",
+      "message": "Would you like to dance with me? / 一緒に踊りませんか？ / Issho ni odorimasen ka?"
+    },
+    {
+      "button_en": "Mirror cuddle?",
+      "button_ja": "ミラーの前で一緒に座りますか？",
+      "message": "Do you want to sit together by the mirror? / ミラーの前で一緒に座りますか？ / Miraa no mae de issho ni suwarimasu ka?"
+    },
+    {
+      "button_en": "I like your style",
+      "button_ja": "あなたの雰囲気が好きです",
+      "message": "I like your style / あなたの雰囲気が好きです / Anata no fun'iki ga suki desu"
+    },
+    {
+      "button_en": "You're sweet",
+      "button_ja": "優しいですね",
+      "message": "You're sweet / 優しいですね / Yasashii desu ne"
+    },
+    {
+      "button_en": "You make me smile",
+      "button_ja": "あなたといると笑顔になります",
+      "message": "You make me smile / あなたといると笑顔になります / Anata to iru to egao ni narimasu"
+    },
+    {
+      "button_en": "I'm shy",
+      "button_ja": "少し恥ずかしいです",
+      "message": "I'm a little shy / 少し恥ずかしいです / Sukoshi hazukashii desu"
+    },
+    {
+      "button_en": "I'm blushing",
+      "button_ja": "照れています",
+      "message": "I'm blushing / 照れています / Terete imasu"
+    },
+    {
+      "button_en": "You are charming",
+      "button_ja": "魅力的ですね",
+      "message": "You are charming / 魅力的ですね / Miryokuteki desu ne"
+    },
+    {
+      "button_en": "Can I compliment?",
+      "button_ja": "褒めてもいいですか？",
+      "message": "Can I compliment you? / 褒めてもいいですか？ / Homete mo ii desu ka?"
+    },
+    {
+      "button_en": "Too cute",
+      "button_ja": "かわいすぎます",
+      "message": "You are too cute / かわいすぎます / Kawaisugimasu"
+    },
+    {
+      "button_en": "Stay with me?",
+      "button_ja": "もう少し一緒にいてくれますか？",
+      "message": "Will you stay with me a little longer? / もう少し一緒にいてくれますか？ / Mou sukoshi issho ni ite kuremasu ka?"
+    },
+    {
+      "button_en": "Message later?",
+      "button_ja": "後でメッセージしてもいいですか？",
+      "message": "Can I message you later? / 後でメッセージしてもいいですか？ / Ato de messeeji shite mo ii desu ka?"
+    },
+    {
+      "button_en": "Add Discord?",
+      "button_ja": "Discordを交換しますか？",
+      "message": "Do you want to exchange Discord? / Discordを交換しますか？ / Discord o koukan shimasu ka?"
+    },
+    {
+      "button_en": "Add friends?",
+      "button_ja": "フレンドになりませんか？",
+      "message": "Would you like to add each other? / フレンドになりませんか？ / Furendo ni narimasen ka?"
+    },
+    {
+      "button_en": "I like talking",
+      "button_ja": "あなたと話すのが楽しいです",
+      "message": "I enjoy talking with you / あなたと話すのが楽しいです / Anata to hanasu no ga tanoshii desu"
+    },
+    {
+      "button_en": "No pressure",
+      "button_ja": "無理しなくて大丈夫です",
+      "message": "No pressure / 無理しなくて大丈夫です / Muri shinakute daijoubu desu"
+    },
+    {
+      "button_en": "Only if okay",
+      "button_ja": "あなたが大丈夫なら",
+      "message": "Only if you are comfortable / あなたが大丈夫なら / Anata ga daijoubu nara"
+    },
+    {
+      "button_en": "Your choice",
+      "button_ja": "あなたに任せます",
+      "message": "It's your choice / あなたに任せます / Anata ni makasemasu"
+    },
+    {
+      "button_en": "Let's chill privately",
+      "button_ja": "プライベートでゆっくりしませんか？",
+      "message": "Would you like to chill privately? / プライベートでゆっくりしませんか？ / Puraibeeto de yukkuri shimasen ka?"
+    },
+    {
+      "button_en": "Another time?",
+      "button_ja": "また今度でも大丈夫です",
+      "message": "Another time is okay too / また今度でも大丈夫です / Mata kondo demo daijoubu desu"
+    },
+    {
+      "button_en": "Thank you",
+      "button_ja": "優しくしてくれてありがとう",
+      "message": "Thank you for being kind to me / 優しくしてくれてありがとう / Yasashiku shite kurete arigatou"
+    }
+  ]
+}

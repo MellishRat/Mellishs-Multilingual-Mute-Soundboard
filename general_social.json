@@ -1,0 +1,332 @@
+{
+  "osc_ip": "127.0.0.1",
+  "osc_port": 9000,
+  "cooldown_seconds": 5,
+  "dark_mode": true,
+  "columns": 8,
+  "window_width": 1280,
+  "window_height": 820,
+  "phrases": [
+    {
+      "button_en": "Clear",
+      "button_ja": "消去",
+      "message": "",
+      "is_clear": true
+    },
+    {
+      "button_en": "Hello",
+      "button_ja": "こんにちは",
+      "message": "Hello / こんにちは / Konnichiwa"
+    },
+    {
+      "button_en": "Good evening",
+      "button_ja": "こんばんは",
+      "message": "Good evening / こんばんは / Konbanwa"
+    },
+    {
+      "button_en": "Nice to meet you",
+      "button_ja": "はじめまして",
+      "message": "Nice to meet you / はじめまして / Hajimemashite"
+    },
+    {
+      "button_en": "How are you?",
+      "button_ja": "元気ですか？",
+      "message": "How are you? / 元気ですか？ / Genki desu ka?"
+    },
+    {
+      "button_en": "I'm good",
+      "button_ja": "元気です",
+      "message": "I'm doing well / 元気です / Genki desu"
+    },
+    {
+      "button_en": "Thank you",
+      "button_ja": "ありがとうございます",
+      "message": "Thank you / ありがとうございます / Arigatou gozaimasu"
+    },
+    {
+      "button_en": "Sorry",
+      "button_ja": "ごめんなさい",
+      "message": "Sorry / ごめんなさい / Gomen nasai"
+    },
+    {
+      "button_en": "Yes",
+      "button_ja": "はい",
+      "message": "Yes / はい / Hai"
+    },
+    {
+      "button_en": "No",
+      "button_ja": "いいえ",
+      "message": "No / いいえ / Iie"
+    },
+    {
+      "button_en": "Maybe",
+      "button_ja": "たぶん",
+      "message": "Maybe / たぶん / Tabun"
+    },
+    {
+      "button_en": "OK",
+      "button_ja": "大丈夫です",
+      "message": "OK / 大丈夫です / Daijoubu desu"
+    },
+    {
+      "button_en": "One moment",
+      "button_ja": "少々お待ちください",
+      "message": "Please wait a moment / 少々お待ちください / Shoushou omachi kudasai"
+    },
+    {
+      "button_en": "I understand",
+      "button_ja": "分かりました",
+      "message": "I understand / 分かりました / Wakarimashita"
+    },
+    {
+      "button_en": "I don't understand",
+      "button_ja": "分かりません",
+      "message": "I don't understand / 分かりません / Wakarimasen"
+    },
+    {
+      "button_en": "Translator",
+      "button_ja": "翻訳機を使っています",
+      "message": "I am using a translator / 翻訳機を使っています / Hon'yakuki o tsukatte imasu"
+    },
+    {
+      "button_en": "English?",
+      "button_ja": "英語を話せますか？",
+      "message": "Do you speak English? / 英語を話せますか？ / Eigo o hanasemasu ka?"
+    },
+    {
+      "button_en": "Japanese?",
+      "button_ja": "日本語を話せますか？",
+      "message": "Do you speak Japanese? / 日本語を話せますか？ / Nihongo o hanasemasu ka?"
+    },
+    {
+      "button_en": "Slow please",
+      "button_ja": "ゆっくり話してください",
+      "message": "Please speak slowly / ゆっくり話してください / Yukkuri hanashite kudasai"
+    },
+    {
+      "button_en": "Type please",
+      "button_ja": "できれば文字でお願いします",
+      "message": "Please type it if you can / できれば文字でお願いします / Dekireba moji de onegaishimasu"
+    },
+    {
+      "button_en": "Where from?",
+      "button_ja": "どこから来ましたか？",
+      "message": "Where are you from? / どこから来ましたか？ / Doko kara kimashita ka?"
+    },
+    {
+      "button_en": "I'm from UK",
+      "button_ja": "私はイギリスからです",
+      "message": "I'm from the UK / 私はイギリスからです / Watashi wa Igirisu kara desu"
+    },
+    {
+      "button_en": "Nice avatar",
+      "button_ja": "素敵なアバターですね",
+      "message": "Nice avatar / 素敵なアバターですね / Suteki na abataa desu ne"
+    },
+    {
+      "button_en": "Cute avatar",
+      "button_ja": "かわいいアバターですね",
+      "message": "Cute avatar / かわいいアバターですね / Kawaii abataa desu ne"
+    },
+    {
+      "button_en": "Cool world",
+      "button_ja": "いいワールドですね",
+      "message": "This is a cool world / いいワールドですね / Ii waarudo desu ne"
+    },
+    {
+      "button_en": "Photo?",
+      "button_ja": "写真を撮ってもいいですか？",
+      "message": "Can I take a photo? / 写真を撮ってもいいですか？ / Shashin o totte mo ii desu ka?"
+    },
+    {
+      "button_en": "Group photo",
+      "button_ja": "集合写真を撮りましょう",
+      "message": "Let's take a group photo / 集合写真を撮りましょう / Shuugou shashin o torimashou"
+    },
+    {
+      "button_en": "Friend request?",
+      "button_ja": "フレンドになりませんか？",
+      "message": "Would you like to add each other? / フレンドになりませんか？ / Furendo ni narimasen ka?"
+    },
+    {
+      "button_en": "Follow me",
+      "button_ja": "ついて来てください",
+      "message": "Follow me / ついて来てください / Tsuite kite kudasai"
+    },
+    {
+      "button_en": "Come here",
+      "button_ja": "こっちへ来てください",
+      "message": "Come here please / こっちへ来てください / Kocchi e kite kudasai"
+    },
+    {
+      "button_en": "Let's go",
+      "button_ja": "行きましょう",
+      "message": "Let's go / 行きましょう / Ikimashou"
+    },
+    {
+      "button_en": "Another world?",
+      "button_ja": "別のワールドに行きますか？",
+      "message": "Do you want to go to another world? / 別のワールドに行きますか？ / Betsu no waarudo ni ikimasu ka?"
+    },
+    {
+      "button_en": "Portal dropped",
+      "button_ja": "ポータルを出しました",
+      "message": "I dropped a portal / ポータルを出しました / Pootaru o dashimashita"
+    },
+    {
+      "button_en": "Enter portal",
+      "button_ja": "ポータルに入ってください",
+      "message": "Please enter the portal / ポータルに入ってください / Pootaru ni haitte kudasai"
+    },
+    {
+      "button_en": "After pool?",
+      "button_ja": "プールの後でどこか行きますか？",
+      "message": "Do you want to go somewhere after the pool? / プールの後でどこか行きますか？ / Puuru no ato de dokoka ikimasu ka?"
+    },
+    {
+      "button_en": "Private world?",
+      "button_ja": "プライベートワールドに行きますか？",
+      "message": "Do you want to go to a private world? / プライベートワールドに行きますか？ / Puraibeeto waarudo ni ikimasu ka?"
+    },
+    {
+      "button_en": "Public world?",
+      "button_ja": "パブリックワールドに行きますか？",
+      "message": "Do you want to go to a public world? / パブリックワールドに行きますか？ / Paburikku waarudo ni ikimasu ka?"
+    },
+    {
+      "button_en": "Invite me",
+      "button_ja": "招待してください",
+      "message": "Please invite me / 招待してください / Shoutai shite kudasai"
+    },
+    {
+      "button_en": "Join me",
+      "button_ja": "参加してください",
+      "message": "Please join me / 参加してください / Sanka shite kudasai"
+    },
+    {
+      "button_en": "Can I join?",
+      "button_ja": "参加してもいいですか？",
+      "message": "Can I join? / 参加してもいいですか？ / Sanka shite mo ii desu ka?"
+    },
+    {
+      "button_en": "Need help?",
+      "button_ja": "手伝いが必要ですか？",
+      "message": "Do you need help? / 手伝いが必要ですか？ / Tetsudai ga hitsuyou desu ka?"
+    },
+    {
+      "button_en": "I'm AFK",
+      "button_ja": "少し離席します",
+      "message": "I am AFK for a moment / 少し離席します / Sukoshi riseki shimasu"
+    },
+    {
+      "button_en": "I'm back",
+      "button_ja": "戻りました",
+      "message": "I'm back / 戻りました / Modorimashita"
+    },
+    {
+      "button_en": "Have fun",
+      "button_ja": "楽しんでください",
+      "message": "Have fun / 楽しんでください / Tanoshinde kudasai"
+    },
+    {
+      "button_en": "Goodbye",
+      "button_ja": "さようなら",
+      "message": "Goodbye / さようなら / Sayounara"
+    },
+    {
+      "button_en": "See you later",
+      "button_ja": "またね",
+      "message": "See you later / またね / Mata ne"
+    },
+    {
+      "button_en": "See you next time",
+      "button_ja": "また今度",
+      "message": "See you next time / また今度 / Mata kondo"
+    },
+    {
+      "button_en": "Good night",
+      "button_ja": "おやすみなさい",
+      "message": "Good night / おやすみなさい / Oyasumi nasai"
+    },
+    {
+      "button_en": "No worries",
+      "button_ja": "気にしないでください",
+      "message": "No worries / 気にしないでください / Ki ni shinaide kudasai"
+    },
+    {
+      "button_en": "That's funny",
+      "button_ja": "面白いですね",
+      "message": "That's funny / 面白いですね / Omoshiroi desu ne"
+    },
+    {
+      "button_en": "I like it",
+      "button_ja": "それが好きです",
+      "message": "I like that / それが好きです / Sore ga suki desu"
+    },
+    {
+      "button_en": "I don't know",
+      "button_ja": "分かりません",
+      "message": "I don't know / 分かりません / Wakarimasen"
+    },
+    {
+      "button_en": "Can you show me?",
+      "button_ja": "見せてくれますか？",
+      "message": "Can you show me? / 見せてくれますか？ / Misete kuremasu ka?"
+    },
+    {
+      "button_en": "Let's chill",
+      "button_ja": "ゆっくりしましょう",
+      "message": "Let's chill / ゆっくりしましょう / Yukkuri shimashou"
+    },
+    {
+      "button_en": "Let's dance",
+      "button_ja": "踊りましょう",
+      "message": "Let's dance / 踊りましょう / Odorimashou"
+    },
+    {
+      "button_en": "Let's sit",
+      "button_ja": "座りましょう",
+      "message": "Let's sit down / 座りましょう / Suwarimashou"
+    },
+    {
+      "button_en": "I'm shy",
+      "button_ja": "少し恥ずかしいです",
+      "message": "I'm a little shy / 少し恥ずかしいです / Sukoshi hazukashii desu"
+    },
+    {
+      "button_en": "I'm nervous",
+      "button_ja": "少し緊張しています",
+      "message": "I'm a little nervous / 少し緊張しています / Sukoshi kinchou shite imasu"
+    },
+    {
+      "button_en": "You are kind",
+      "button_ja": "優しいですね",
+      "message": "You are kind / 優しいですね / Yasashii desu ne"
+    },
+    {
+      "button_en": "Thanks for talking",
+      "button_ja": "話してくれてありがとう",
+      "message": "Thank you for talking with me / 話してくれてありがとう / Hanashite kurete arigatou"
+    },
+    {
+      "button_en": "Message me later",
+      "button_ja": "後でメッセージしてください",
+      "message": "Message me later / 後でメッセージしてください / Ato de messeeji shite kudasai"
+    },
+    {
+      "button_en": "Add Discord?",
+      "button_ja": "Discordを交換しますか？",
+      "message": "Do you want to exchange Discord? / Discordを交換しますか？ / Discord o koukan shimasu ka?"
+    },
+    {
+      "button_en": "I'm leaving",
+      "button_ja": "そろそろ行きます",
+      "message": "I'm heading off / そろそろ行きます / Sorosoro ikimasu"
+    },
+    {
+      "button_en": "Empty 64",
+      "button_ja": "空",
+      "message": ""
+    }
+  ]
+}
